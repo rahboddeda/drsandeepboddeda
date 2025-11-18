@@ -5,150 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Sandeep Boddeda - Orthopaedic & Robotic Joint Specialist</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- 3D Model Viewer -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* 3D Models in Hero */
-        .hero-3d {
-            position: absolute;
-            z-index: 1;
-            pointer-events: none;
-            opacity: 0.45;
-            animation: floatHero 12s ease-in-out infinite;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
-        }
-
-        @keyframes floatHero {
-            0%   { transform: translateY(0px) rotateY(0deg); }
-            50%  { transform: translateY(-25px) rotateY(20deg); }
-            100% { transform: translateY(0px) rotateY(0deg); }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="shadow-lg bg-white sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-xl sm:text-3xl font-extrabold text-[#004d99] tracking-tight">
+    <header class="main-header">
+        <div class="header-content container">
+            <h1 class="site-title">
                 Dr. Sandeep Boddeda
             </h1>
-            <a href="https://wa.me/918885685715" target="_blank"
-               class="px-4 py-2 bg-[#0077b6] text-white rounded-full shadow-md hover:bg-[#004d99] transition">
+            <a href="https://wa.me/918885685715" target="_blank" class="cta-button header-cta">
                 Book Appointment
             </a>
         </div>
     </header>
 
-<model-viewer 
+    <model-viewer 
             src="https://cdn.jsdelivr.net/gh/rahboddeda/drsandeepboddeda/public/spine_collection_of_thunthu.glb"
             auto-rotate 
-            disable-zoom 
-            camera-controls 
-            class="hero-3d"
+            enable-zoom 
+            class="hero-3d-spine"
             style="width: 500px;height: 500px; top:15%; left:5%;">
-        </model-viewer>
-    <!-- ======================= -->
-    <!--       HERO SECTION      -->
-    <!-- ======================= -->
+    </model-viewer>
+        
+    <section id="hero" class="hero-section">
+        <div class="container hero-grid">
 
-    <section id="hero" class="bg-[#e0f7fa] py-12 md:py-24 relative overflow-hidden">
-
-        <!-- 3D Models (Only in Hero Section) -->
-        <!-- <model-viewer 
-            src="spine_collection_of_thunthu.glb"
-            auto-rotate 
-            disable-zoom 
-            camera-controls 
-            class="hero-3d"
-            style="width:200px; top:15%; left:5%;">
-        </model-viewer> -->
-
-        <!-- <model-viewer 
-            src="https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/SheenChair/glTF-Binary/SheenChair.glb"
-            auto-rotate 
-            disable-zoom 
-            camera-controls 
-            class="hero-3d"
-            style="width:240px; top:55%; left:80%; animation-duration: 16s;">
-        </model-viewer> -->
-
-        <!-- <model-viewer 
-            src="knee_anatomical_model.glb"
-            auto-rotate 
-            disable-zoom 
-            camera-controls 
-            class="hero-3d"
-            style="width:500px;height: 500px; top:70%; left:20%; animation-duration: 14s;">
-        </model-viewer> -->
-
-
-        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center relative z-10">
-
-            <div class="text-gray-800 order-2 md:order-1">
-                <p class="text-base font-semibold text-[#0077b6] uppercase mb-2 tracking-wider">
+            <div class="hero-text-content">
+                <p class="hero-subtitle">
                     Orthopaedic Excellence, Precision Delivered
                 </p>
 
-                <div class="bg-white p-4 rounded-xl shadow-lg mb-4 inline-block">
-                    <p class="text-yellow-500 text-lg mb-1">
-                        ★★★★★ <span class="text-gray-800 font-semibold ml-2">4.8 Average Rating</span>
+                <div class="rating-box">
+                    <p class="rating-stars">
+                        ★★★★★ <span class="rating-score">4.8 Average Rating</span>
                     </p>
-                    <p class="text-sm text-gray-500">Based on 268 reviews | Best Orthopedic Doctor in Manikonda</p>
+                    <p class="rating-info">Based on 268 reviews | Best Orthopedic Doctor in Manikonda</p>
                 </div>
 
-                <h2 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4">
-                    MAKO-Certified <span class="text-[#004d99]">Robotic Joint Specialist</span>
+                <h2 class="hero-title">
+                    MAKO-Certified <span class="text-highlight">Robotic Joint Specialist</span>
                 </h2>
 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#procedures" class="px-6 py-3 bg-[#0077b6] text-white rounded-full shadow-xl hover:bg-[#004d99] transition">
+                <div class="hero-actions">
+                    <a href="#procedures" class="cta-button primary-cta">
                         View Procedures
                     </a>
-                    <a href="https://wa.me/918885685715" target="_blank"
-                       class="px-6 py-3 bg-white border border-[#0077b6] text-[#0077b6] rounded-full shadow-md hover:bg-gray-100 transition">
+                    <a href="https://wa.me/918885685715" target="_blank" class="cta-button secondary-cta">
                         Book Appointment
                     </a>
                 </div>
             </div>
 
-            <div class="flex justify-center order-1 md:order-2">
+            <div class="hero-image-container">
                 <img src="sandeep-Sir-image-Background-removed-file-1.png" 
-                     class="rounded-xl shadow-2xl max-w-sm z-10 relative">
+                     class="hero-image">
             </div>
 
         </div>
     </section>
 
 
-    <!-- About Dr. Boddeda -->
-    <section id="about" class="py-12 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h3 class="section-header text-3xl sm:text-4xl font-bold text-gray-800 mb-8">The Surgeon's Profile</h3>
-            <div class="grid md:grid-cols-1 gap-8 items-start">
-                
-                <!-- Main Bio -->
-                <div class="space-y-5 text-base text-gray-600">
-                    <p>Dr. Sandeep Boddeda is an experienced Orthopedic Surgeon with over five years of dedicated expertise in complex Joint Replacement and Trauma Surgeries.</p>
-                    <p>
-                        He completed his MBBS from the prestigious Andhra Medical College and pursued his MS in Orthopaedics at Nizam's Institute of Medical Sciences (NIMS). Further specializing in joint replacement, he completed a fellowship at Sunshine Hospitals, gaining advanced training in hip and knee arthroplasty.
-                    </p>
-                    <p class="font-semibold text-gray-800">
-                        A MAKO-certified Robotic Joint Replacement Surgeon, he has successfully performed over 1,000 joint replacement surgeries and 400 trauma surgeries in the last five years. His precision and expertise ensure optimal outcomes for his patients, focused on restoring mobility and improving the quality of life.
-                    </p>
-                </div>
+    <section id="about" class="section-padding bg-white">
+        <div class="container">
+            <h3 class="section-header">The Surgeon's Profile</h3>
+            
+            <div class="about-content">
+                <p>Dr. Sandeep Boddeda is an experienced Orthopedic Surgeon with over five years of dedicated expertise in complex Joint Replacement and Trauma Surgeries.</p>
+                <p>
+                    He completed his MBBS from the prestigious Andhra Medical College and pursued his MS in Orthopaedics at Nizam's Institute of Medical Sciences (NIMS). Further specializing in joint replacement, he completed a fellowship at Sunshine Hospitals, gaining advanced training in hip and knee arthroplasty.
+                </p>
+                <p class="about-highlight">
+                    A MAKO-certified Robotic Joint Replacement Surgeon, he has successfully performed over 1,000 joint replacement surgeries and 400 trauma surgeries in the last five years. His precision and expertise ensure optimal outcomes for his patients, focused on restoring mobility and improving the quality of life.
+                </p>
             </div>
         </div>
     </section>
@@ -156,29 +90,25 @@
     
 
 
-    <!-- Core Expertise/Specializations Section -->
-    <section id="expertise" class="py-12 md:py-24 bg-[#e0f7fa]">
-        <div class="container mx-auto px-4">
-            <h3 class="section-header text-3xl sm:text-4xl font-bold text-gray-800 mb-8">Centers of Orthopaedic Focus</h3>
+    <section id="expertise" class="section-padding bg-light-blue">
+        <div class="container">
+            <h3 class="section-header">Centers of Orthopaedic Focus</h3>
             
-            <!-- Explicit Mobile Grid (2-columns) to prevent cards from being too small -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+            <div class="expertise-grid">
 
-                <!-- Joint Replacement -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-[#0077b6] hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card primary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M16 8V6a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
                         <rect x="2" y="8" width="20" height="14" rx="2"></rect>
                         <path d="M10 12v4"></path>
                         <path d="M14 12v4"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Joint Replacement</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Knee, Hip, & Shoulder Arthroplasty.</p>
+                    <h4 class="card-title">Joint Replacement</h4>
+                    <p class="card-description">Knee, Hip, & Shoulder Arthroplasty.</p>
                 </div>
 
-                <!-- Sports Medicine -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-gray-300 hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card secondary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M17 19h2c.6 0 1-.4 1-1v-4c0-.6-.4-1-1-1h-2c-.6 0-1 .4-1 1v4c0 .6.4 1 1 1z"></path>
                         <path d="M10 19l-4 0"></path>
                         <path d="M12 19l0-6"></path>
@@ -192,52 +122,48 @@
                         <path d="M12 11l4 2"></path>
                         <path d="M16 13l0 6"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Sports Medicine</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Injury Prevention & Rehabilitation.</p>
+                    <h4 class="card-title">Sports Medicine</h4>
+                    <p class="card-description">Injury Prevention & Rehabilitation.</p>
                 </div>
 
-                <!-- Spine Surgery -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-gray-300 hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card secondary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 7.5V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v-2"></path>
                         <path d="M7 10h10"></path>
                         <path d="M10 14h4"></path>
                         <path d="M12 3a2 2 0 0 1 2 2v2"></path>
                         <path d="M10 5v2a2 2 0 0 1-2 2h-1"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Spine Health</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Disc, Stenosis, and Scoliosis care.</p>
+                    <h4 class="card-title">Spine Health</h4>
+                    <p class="card-description">Disc, Stenosis, and Scoliosis care.</p>
                 </div>
 
-                <!-- Hand & Wrist -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-gray-300 hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card secondary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M15 8.5a6 6 0 0 1 4 4.5 4 4 0 0 1-1 2.5 2 2 0 0 1-3-1v-2c0-.5-.5-.7-1-.2L9 11l-3-4"></path>
                         <path d="M2 17c-2 0-3-1-3-3s1-2 3-2"></path>
                         <path d="M22 17c2 0 3-1 3-3s-1-2-3-2"></path>
                         <path d="M8 7l2-4"></path>
                         <path d="M14 7l-2-4"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Upper Limb Surgery</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Carpal Tunnel & Fracture Repair.</p>
+                    <h4 class="card-title">Upper Limb Surgery</h4>
+                    <p class="card-description">Carpal Tunnel & Fracture Repair.</p>
                 </div>
 
-                <!-- Trauma Care -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-gray-300 hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card secondary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5z"></path>
                         <path d="M15 15l4 4"></path>
                         <path d="M5 5l4 4"></path>
                         <path d="M19 5l-4 4"></path>
                         <path d="M5 19l4-4"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Acute Trauma Care</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Fractures, Dislocations, Emergencies.</p>
+                    <h4 class="card-title">Acute Trauma Care</h4>
+                    <p class="card-description">Fractures, Dislocations, Emergencies.</p>
                 </div>
 
-                <!-- Pediatric Orthopedics -->
-                <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg transition duration-300 text-center border-b-4 border-gray-300 hover:shadow-xl">
-                    <svg class="icon-svg w-8 h-8 sm:w-10 sm:h-10 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="expertise-card secondary-border">
+                    <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M15 14c.2-.8.8-1.7 2-2.8 1.4-1.2 2.7-2.7 2.7-4.5 0-1.7-1.3-3-3-3-1.6 0-3 1.3-3 3 0 1.2-.5 2.4-1.5 3.3"></path>
                         <path d="M9 13v6"></path>
                         <path d="M6 16h6"></path>
@@ -248,31 +174,29 @@
                         <path d="M17 19l-2 3"></path>
                         <path d="M13 19l2 3"></path>
                     </svg>
-                    <h4 class="text-base sm:text-xl font-semibold text-gray-800">Pediatric Ortho</h4>
-                    <p class="text-xs text-gray-500 hidden sm:block">Congenital & Growth Disorders.</p>
+                    <h4 class="card-title">Pediatric Ortho</h4>
+                    <p class="card-description">Congenital & Growth Disorders.</p>
                 </div>
             </div>
         </div>
     </section>
-<model-viewer
-    src="https://cdn.jsdelivr.net/gh/rahboddeda/drsandeepboddeda/public/knee_anatomy.glb"
-    auto-rotate
-    disable-zoom
-    camera-controls
-    class="hero-3d"
-    style="width: 400px;height: 1000px; top:50%; left:50%; animation-duration: 14s;">
-</model-viewer>
-    <!-- Detailed Procedures Section -->
-    <section id="procedures" class="py-12 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h3 class="section-header text-3xl sm:text-4xl font-bold text-gray-800 mb-8">Advanced Surgical Solutions</h3>
-            <div class="space-y-8">
+    
+    <model-viewer
+        src="https://cdn.jsdelivr.net/gh/rahboddeda/drsandeepboddeda/public/knee_anatomy.glb"
+        auto-rotate
+        disable-zoom
+        class="hero-3d-knee"
+        style="width: 400px;height: 1000px; top:50%; left:50%; animation-duration: 14s;">
+    </model-viewer>
+
+    <section id="procedures" class="section-padding bg-white">
+        <div class="container">
+            <h3 class="section-header">Advanced Surgical Solutions</h3>
+            <div class="procedures-list">
                 
-                <!-- Joint Replacement Card -->
-                <div class="p-6 rounded-xl shadow-lg border-l-8 border-[#0077b6] bg-gray-50">
-                    <div class="flex items-center mb-3">
-                        <!-- Hip/Knee Icon -->
-                        <svg class="icon-svg w-10 h-10 mr-4 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <div class="procedure-card primary-border-left">
+                    <div class="procedure-header">
+                        <svg class="card-icon-large" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M13.5 6.5l3.5 3.5-3.5 3.5"></path>
                             <path d="M10.5 6.5l-3.5 3.5 3.5 3.5"></path>
                             <path d="M12 10.5V2"></path>
@@ -281,35 +205,33 @@
                             <path d="M6 10.5l3 7.5"></path>
                             <circle cx="12" cy="15" r="3"></circle>
                         </svg>
-                        <h4 class="text-xl sm:text-2xl font-bold text-[#004d99]">Robotic & Advanced Joint Replacement Surgery</h4>
+                        <h4 class="procedure-title primary-text">Robotic & Advanced Joint Replacement Surgery</h4>
                     </div>
-                    <p class="text-base text-gray-600 mb-4">
+                    <p class="procedure-description">
                         Specializing in total and partial joint replacement for the knee, hip, and shoulder. Utilizing MAKO Robotics for unparalleled surgical accuracy, personalized implant positioning, and faster patient recovery. 
                     </p>
-                    <ul class="list-disc pl-6 text-sm text-gray-600 space-y-1">
+                    <ul class="procedure-list">
                         <li>Total Knee Arthroplasty (TKA)</li>
                         <li>Total Hip Replacement (THR)</li>
                         <li>Revision Joint Surgery</li>
                     </ul>
                 </div>
 
-                <!-- Trauma Care Card -->
-                <div class="p-6 rounded-xl shadow-lg border-l-8 border-gray-400 bg-gray-50">
-                    <div class="flex items-center mb-3">
-                        <!-- Bone Fracture Icon -->
-                        <svg class="icon-svg w-10 h-10 mr-4 flex-shrink-0 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <div class="procedure-card secondary-border-left">
+                    <div class="procedure-header">
+                        <svg class="card-icon-large gray-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path>
                             <path d="M6 12c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path>
                             <path d="M12 21c-1.7 0-3-1.3-3-3s1.3-3 3-3 3 1.3 3 3-1.3 3-3 3z"></path>
                             <path d="M18 12h-2c-1.7 0-3 1.3-3 3s1.3 3 3 3h2c1.7 0 3-1.3 3-3s-1.3-3-3-3z"></path>
                             <path d="M6 12h2c1.7 0 3 1.3 3 3s-1.3 3-3 3H6c-1.7 0-3-1.3-3-3s1.3-3 3-3z"></path>
                         </svg>
-                        <h4 class="text-xl sm:text-2xl font-bold text-gray-700">Musculoskeletal Trauma Management</h4>
+                        <h4 class="procedure-title text-gray-700">Musculoskeletal Trauma Management</h4>
                     </div>
-                    <p class="text-base text-gray-600 mb-4">
+                    <p class="procedure-description">
                         Immediate and comprehensive surgical intervention for complex fractures, dislocations, and orthopedic emergencies. Expertise in high-energy trauma reconstruction and internal fixation methods.
                     </p>
-                    <ul class="list-disc pl-6 text-sm text-gray-600 space-y-1">
+                    <ul class="procedure-list">
                         <li>Open Reduction and Internal Fixation (ORIF)</li>
                         <li>Limb Salvage Procedures</li>
                         <li>Polytrauma Management</li>
@@ -320,74 +242,50 @@
         </div>
     </section>
 
-    <!-- Experience & Education Timeline (Optimized for single-column stack on mobile) -->
-    <section id="experience" class="py-12 md:py-24 bg-[#f8fafc]">
-        <div class="container mx-auto px-4">
-            <h3 class="section-header text-3xl sm:text-4xl font-bold text-gray-800 mb-12">Credentials & Surgical Journey</h3>
+    <section id="experience" class="section-padding bg-light-gray">
+        <div class="container">
+            <h3 class="section-header timeline-header">Credentials & Surgical Journey</h3>
 
-            <div class="relative max-w-4xl mx-auto">
-                <!-- Vertical Line (Visible only on larger screens for timeline visual) -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 hidden md:block"></div>
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
 
-                <!-- Timeline Items: Use flex on desktop, simple block stacking on mobile -->
-                
-                <!-- Item 1: Robotic Surgery (Latest) -->
-                <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full">
-                    <div class="w-full md:w-5/12 order-1 md:order-none">
-                        <div class="bg-[#0077b6] text-white p-4 sm:p-6 rounded-xl shadow-lg md:text-right">
-                            <h4 class="text-lg sm:text-xl font-bold mb-1">MAKO Robotic Certification</h4>
-                            <p class="font-light text-sm">Precision Joint Replacement Training</p>
-                            <span class="text-xs opacity-80 mt-2 block">Focus on high-accuracy hip and knee procedures.</span>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-content primary-bg align-right">
+                        <h4 class="timeline-title">MAKO Robotic Certification</h4>
+                        <p class="timeline-subtitle">Precision Joint Replacement Training</p>
+                        <span class="timeline-date">Focus on high-accuracy hip and knee procedures.</span>
                     </div>
-                    <div class="hidden md:block w-2/12">
-                        <div class="w-4 h-4 bg-[#0077b6] rounded-full mx-auto shadow-lg"></div>
-                    </div>
-                    <div class="w-full md:w-5/12 order-2 md:order-none h-2 md:h-auto"></div>
+                    <div class="timeline-dot primary-dot"></div>
+                    <div></div>
                 </div>
 
-                <!-- Item 2: Fellowship -->
-                <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full">
-                    <div class="w-full md:w-5/12 order-2 md:order-none h-2 md:h-auto"></div>
-                    <div class="hidden md:block w-2/12">
-                        <div class="w-4 h-4 bg-gray-400 rounded-full mx-auto shadow-lg"></div>
-                    </div>
-                    <div class="w-full md:w-5/12 order-1 md:order-none">
-                        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg border-l-4 border-gray-400">
-                            <h4 class="text-lg sm:text-xl font-bold mb-1 text-gray-800">Fellowship in Joint Replacement</h4>
-                            <p class="text-[#0077b6] text-sm">Sunshine Hospitals</p>
-                            <span class="text-xs text-gray-500 mt-2 block">Advanced training in Hip and Knee Arthroplasty.</span>
-                        </div>
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-dot secondary-dot"></div>
+                    <div class="timeline-content secondary-border-left">
+                        <h4 class="timeline-title secondary-text">Fellowship in Joint Replacement</h4>
+                        <p class="timeline-subtitle primary-text">Sunshine Hospitals</p>
+                        <span class="timeline-date">Advanced training in Hip and Knee Arthroplasty.</span>
                     </div>
                 </div>
 
-                <!-- Item 3: MS Orthopaedics -->
-                <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full">
-                    <div class="w-full md:w-5/12 order-1 md:order-none">
-                        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg border-r-4 border-gray-400 md:text-right">
-                            <h4 class="text-lg sm:text-xl font-bold mb-1 text-gray-800">MS Orthopaedics</h4>
-                            <p class="text-[#0077b6] text-sm">Nizam's Institute of Medical Sciences (NIMS)</p>
-                            <span class="text-xs text-gray-500 mt-2 block">Honed surgical skills in complex musculoskeletal conditions.</span>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-content secondary-border-right align-right">
+                        <h4 class="timeline-title secondary-text">MS Orthopaedics</h4>
+                        <p class="timeline-subtitle primary-text">Nizam's Institute of Medical Sciences (NIMS)</p>
+                        <span class="timeline-date">Honed surgical skills in complex musculoskeletal conditions.</span>
                     </div>
-                    <div class="hidden md:block w-2/12">
-                        <div class="w-4 h-4 bg-gray-400 rounded-full mx-auto shadow-lg"></div>
-                    </div>
-                    <div class="w-full md:w-5/12 order-2 md:order-none h-2 md:h-auto"></div>
+                    <div class="timeline-dot secondary-dot"></div>
+                    <div></div>
                 </div>
 
-                <!-- Item 4: MBBS (Foundation) -->
-                <div class="mb-8 flex flex-col md:flex-row justify-between items-center w-full">
-                    <div class="w-full md:w-5/12 order-2 md:order-none h-2 md:h-auto"></div>
-                    <div class="hidden md:block w-2/12">
-                        <div class="w-4 h-4 bg-gray-400 rounded-full mx-auto shadow-lg"></div>
-                    </div>
-                    <div class="w-full md:w-5/12 order-1 md:order-none">
-                        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-lg border-l-4 border-gray-400">
-                            <h4 class="text-lg sm:text-xl font-bold mb-1 text-gray-800">MBBS</h4>
-                            <p class="text-[#0077b6] text-sm">Andhra Medical College</p>
-                            <span class="text-xs text-gray-500 mt-2 block">Foundational Medical Training.</span>
-                        </div>
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-dot secondary-dot"></div>
+                    <div class="timeline-content secondary-border-left">
+                        <h4 class="timeline-title secondary-text">MBBS</h4>
+                        <p class="timeline-subtitle primary-text">Andhra Medical College</p>
+                        <span class="timeline-date">Foundational Medical Training.</span>
                     </div>
                 </div>
 
@@ -395,44 +293,41 @@
         </div>
     </section>
 
-    <!-- Why Choose Us Block - Replicating Uploaded Image Layout -->
-    <section id="why-choose-us" class="py-12 md:py-24 bg-white">
-        <div class="container mx-auto px-4">
-            <h3 class="text-3xl sm:text-4xl font-bold text-gray-800 text-center mb-4">Why Choose Us</h3>
-            <p class="text-xl sm:text-2xl font-light text-gray-600 text-center mb-12">We Make Orthopedic Care Comfortable</p>
+    <section id="why-choose-us" class="section-padding bg-white">
+        <div class="container">
+            <h3 class="section-header text-center">Why Choose Us</h3>
+            <p class="sub-header-center">We Make Orthopedic Care Comfortable</p>
 
-            <div class="grid md:grid-cols-2 gap-8 items-center bg-[#f0f9ff] p-6 sm:p-10 rounded-xl shadow-2xl">
-                <!-- Image of Doctor with Mako Robot (Using a placeholder image URL to represent the uploaded surgical context image) -->
-                <div class="flex justify-center order-1">
-                    <img src="pose.jpeg" alt="Dr. Sandeep Boddeda with Mako Robotic System" class="rounded-lg shadow-xl w-full max-w-md">
+            <div class="choice-grid">
+                <div class="choice-image-container">
+                    <img src="pose.jpeg" alt="Dr. Sandeep Boddeda with Mako Robotic System" class="choice-image">
                 </div>
                 
-                <!-- 5 Points and CTA -->
-                <div class="order-2 space-y-4">
-                    <h4 class="text-2xl font-bold text-[#004d99] mb-4">Meet Dr. Sandeep Boddeda</h4>
-                    <ul class="space-y-3 text-gray-700 text-base">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-2 mt-1 text-green-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
+                <div class="choice-content">
+                    <h4 class="choice-title primary-text">Meet Dr. Sandeep Boddeda</h4>
+                    <ul class="choice-list">
+                        <li class="check-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
                             5+ Years of experience joint replacement and trauma surgeries
                         </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-2 mt-1 text-green-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
+                        <li class="check-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
                             Over 1,000 successful joint replacements and 400 trauma surgeries
                         </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-2 mt-1 text-green-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
+                        <li class="check-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
                             Expert in advanced hip and knee arthroplasty, trained at Sunshine Hospitals
                         </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-2 mt-1 text-green-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
+                        <li class="check-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
                             Personalized, patient-first care focused on restoring mobility and improving quality of life.
                         </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 mr-2 mt-1 text-green-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
+                        <li class="check-item">
+                            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 15.586l-3.293-3.293a1 1 0 0 0-1.414 1.414l4 4a1 1 0 0 0 1.414 0l8-8a1 1 0 0 0-1.414-1.414L10 15.586z"/></svg>
                             Commitment to Restoring Quality of Life
                         </li>
                     </ul>
-                    <a href="http://wa.me/918885685715" target="_blank" class="mt-6 w-full md:w-auto inline-block py-3 px-8 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition duration-300 shadow-lg text-center">
+                    <a href="http://wa.me/918885685715" target="_blank" class="cta-button success-cta">
                         Book an Appointment
                     </a>
                 </div>
@@ -440,19 +335,17 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#004d99] text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <!-- Clinic Info from the original contact section, moved to the footer area -->
-            <div class="text-sm opacity-90 mb-4 space-y-1">
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-details">
                 <p>LH 14 909, Lanco Hills Apartments, Manikonda, Hyderabad, Telangana</p>
-                <p>Mobile: <a href="tel:+918885685715" class="hover:underline">+91 8885685715</a></p>
-                <a href="http://wa.me/918885685715" target="_blank" class="mt-2 inline-block text-xs font-medium text-white/70 hover:text-white underline">Schedule a Virtual Appointment</a>
+                <p>Mobile: <a href="tel:+918885685715" class="footer-link">+91 8885685715</a></p>
+                <a href="http://wa.me/918885685715" target="_blank" class="footer-link footer-link-small">Schedule a Virtual Appointment</a>
             </div>
 
-            <p class="text-sm font-semibold mb-1">Dr. Sandeep Boddeda</p>
-            <p class="text-xs opacity-75">Orthopaedic & Robotic Joint Replacement Specialist</p>
-            <p class="text-xs opacity-50 mt-3">Copyright © 2025 Dr. Sandeep Boddeda | All Rights are Reserved by this Clinic</p>
+            <p class="footer-signature">Dr. Sandeep Boddeda</p>
+            <p class="footer-specialty">Orthopaedic & Robotic Joint Replacement Specialist</p>
+            <p class="footer-copyright">Copyright © 2025 Dr. Sandeep Boddeda | All Rights are Reserved by this Clinic</p>
         </div>
     </footer>
 
