@@ -4,71 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Sandeep Boddeda - Orthopaedic & Robotic Joint Specialist</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- 3D Model Viewer -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
+            background-color: #f8fafc;
+            position: relative;
+            overflow-x: hidden;
         }
-        .section-header {
-            border-left: 5px solid #0077b6; /* Deep Sky Blue accent */
-            padding-left: 1rem;
+
+        /* 3D Models in Hero */
+        .hero-3d {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.45;
+            animation: floatHero 12s ease-in-out infinite;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
         }
-        .icon-svg {
-            color: #0077b6;
+
+        @keyframes floatHero {
+            0%   { transform: translateY(0px) rotateY(0deg); }
+            50%  { transform: translateY(-25px) rotateY(20deg); }
+            100% { transform: translateY(0px) rotateY(0deg); }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Header -->
     <header class="shadow-lg bg-white sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <h1 class="text-xl sm:text-3xl font-extrabold text-[#004d99] tracking-tight">
                 Dr. Sandeep Boddeda
             </h1>
-            <a href="http://wa.me/918885685715" target="_blank" class="px-3 py-1 sm:px-4 sm:py-2 bg-[#0077b6] text-white text-sm font-medium rounded-full hover:bg-[#004d99] transition duration-300 shadow-md">
+            <a href="https://wa.me/918885685715" target="_blank"
+               class="px-4 py-2 bg-[#0077b6] text-white rounded-full shadow-md hover:bg-[#004d99] transition">
                 Book Appointment
             </a>
         </div>
     </header>
 
-    <!-- Hero Section: Robotic Joint Replacement Focus (Mobile-First Stacking) -->
-    <section id="hero" class="bg-[#e0f7fa] py-12 md:py-24">
-        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
-            
-            <!-- Hero Content -->
+<model-viewer 
+            src="https://cdn.jsdelivr.net/gh/rahboddeda/drsandeepboddeda/public/spine_collection_of_thunthu.glb"
+            auto-rotate 
+            disable-zoom 
+            camera-controls 
+            class="hero-3d"
+            style="width: 500px;height: 500px; top:15%; left:5%;">
+        </model-viewer>
+    <!-- ======================= -->
+    <!--       HERO SECTION      -->
+    <!-- ======================= -->
+
+    <section id="hero" class="bg-[#e0f7fa] py-12 md:py-24 relative overflow-hidden">
+
+        <!-- 3D Models (Only in Hero Section) -->
+        <!-- <model-viewer 
+            src="spine_collection_of_thunthu.glb"
+            auto-rotate 
+            disable-zoom 
+            camera-controls 
+            class="hero-3d"
+            style="width:200px; top:15%; left:5%;">
+        </model-viewer> -->
+
+        <!-- <model-viewer 
+            src="https://github.com/KhronosGroup/glTF-Sample-Models/raw/master/2.0/SheenChair/glTF-Binary/SheenChair.glb"
+            auto-rotate 
+            disable-zoom 
+            camera-controls 
+            class="hero-3d"
+            style="width:240px; top:55%; left:80%; animation-duration: 16s;">
+        </model-viewer> -->
+
+        <!-- <model-viewer 
+            src="knee_anatomical_model.glb"
+            auto-rotate 
+            disable-zoom 
+            camera-controls 
+            class="hero-3d"
+            style="width:500px;height: 500px; top:70%; left:20%; animation-duration: 14s;">
+        </model-viewer> -->
+
+
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center relative z-10">
+
             <div class="text-gray-800 order-2 md:order-1">
-                <p class="text-base font-semibold text-[#0077b6] uppercase mb-2 tracking-wider">Orthopaedic Excellence, Precision Delivered</p>
-                
+                <p class="text-base font-semibold text-[#0077b6] uppercase mb-2 tracking-wider">
+                    Orthopaedic Excellence, Precision Delivered
+                </p>
+
                 <div class="bg-white p-4 rounded-xl shadow-lg mb-4 inline-block">
-                    <p class="text-yellow-500 text-lg mb-1">★★★★★ <span class="text-gray-800 font-semibold ml-2">4.8 Average Rating</span></p>
+                    <p class="text-yellow-500 text-lg mb-1">
+                        ★★★★★ <span class="text-gray-800 font-semibold ml-2">4.8 Average Rating</span>
+                    </p>
                     <p class="text-sm text-gray-500">Based on 268 reviews | Best Orthopedic Doctor in Manikonda</p>
                 </div>
 
                 <h2 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight mb-4">
                     MAKO-Certified <span class="text-[#004d99]">Robotic Joint Specialist</span>
                 </h2>
-                <p class="text-lg mb-6 max-w-lg">
-                    If you are looking for a trusted orthopedic specialist, we are here to help. We are known for providing the best, most affordable, and effective treatments for joint replacements, spine care, and sports injuries.
-                </p>
-                <div class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:space-x-4">
-                    <a href="#procedures" class="px-6 py-3 bg-[#0077b6] text-white text-base font-medium rounded-full text-center hover:bg-[#004d99] transition duration-300 shadow-xl">
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#procedures" class="px-6 py-3 bg-[#0077b6] text-white rounded-full shadow-xl hover:bg-[#004d99] transition">
                         View Procedures
                     </a>
-                    <a href="http://wa.me/918885685715" target="_blank" class="px-6 py-3 bg-white border border-[#0077b6] text-[#0077b6] text-base font-medium rounded-full text-center hover:bg-gray-100 transition duration-300 shadow-md">
+                    <a href="https://wa.me/918885685715" target="_blank"
+                       class="px-6 py-3 bg-white border border-[#0077b6] text-[#0077b6] rounded-full shadow-md hover:bg-gray-100 transition">
                         Book Appointment
                     </a>
                 </div>
             </div>
 
-            <!-- Hero Image -->
             <div class="flex justify-center order-1 md:order-2">
-                <img src="sandeep-Sir-image-Background-removed-file-1.png" alt="Dr. Sandeep Boddeda" class="rounded-xl shadow-2xl w-full max-w-xs sm:max-w-sm transform hover:scale-[1.01] transition duration-500">
+                <img src="sandeep-Sir-image-Background-removed-file-1.png" 
+                     class="rounded-xl shadow-2xl max-w-sm z-10 relative">
             </div>
+
         </div>
     </section>
+
 
     <!-- About Dr. Boddeda -->
     <section id="about" class="py-12 md:py-24 bg-white">
@@ -89,6 +152,9 @@
             </div>
         </div>
     </section>
+
+    
+
 
     <!-- Core Expertise/Specializations Section -->
     <section id="expertise" class="py-12 md:py-24 bg-[#e0f7fa]">
@@ -188,7 +254,14 @@
             </div>
         </div>
     </section>
-
+<model-viewer
+    src="https://cdn.jsdelivr.net/gh/rahboddeda/drsandeepboddeda/public/knee_anatomy.glb"
+    auto-rotate
+    disable-zoom
+    camera-controls
+    class="hero-3d"
+    style="width: 400px;height: 1000px; top:50%; left:50%; animation-duration: 14s;">
+</model-viewer>
     <!-- Detailed Procedures Section -->
     <section id="procedures" class="py-12 md:py-24 bg-white">
         <div class="container mx-auto px-4">
